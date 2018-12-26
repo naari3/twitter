@@ -12,6 +12,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>] The reported users.
       # @overload report_spam(*users)
       #   @param users [Enumerable<Integer, String, Twitter::User>] A collection of Twitter user IDs, screen names, or objects.

@@ -15,6 +15,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>] favorite Tweets.
       # @overload favorites(options = {})
       #   Returns the 20 most recent favorite Tweets for the authenticating user
@@ -41,6 +42,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>] The un-favorited Tweets.
       # @overload unfavorite(*tweets)
       #   @param tweets [Enumerable<Integer, String, URI, Twitter::Tweet>] A collection of Tweet IDs, URIs, or objects.
@@ -66,6 +68,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::NotFound] Error raised when tweet does not exist or has been deleted.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>] The un-favorited Tweets.
       # @overload unfavorite!(*tweets)
       #   @param tweets [Enumerable<Integer, String, URI, Twitter::Tweet>] A collection of Tweet IDs, URIs, or objects.
@@ -82,6 +85,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>] The favorited Tweets.
       # @overload favorite(*tweets)
       #   @param tweets [Enumerable<Integer, String, URI, Twitter::Tweet>] A collection of Tweet IDs, URIs, or objects.
@@ -109,6 +113,7 @@ module Twitter
       # @raise [Twitter::Error::AlreadyFavorited] Error raised when tweet has already been favorited.
       # @raise [Twitter::Error::NotFound] Error raised when tweet does not exist or has been deleted.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>] The favorited Tweets.
       # @overload favorite!(*tweets)
       #   @param tweets [Enumerable<Integer, String, URI, Twitter::Tweet>] A collection of Tweet IDs, URIs, or objects.

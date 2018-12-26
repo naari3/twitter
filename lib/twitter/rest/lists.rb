@@ -23,6 +23,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::List>]
       # @overload lists(options = {})
       #   @param options [Hash] A customizable set of options.
@@ -43,6 +44,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>]
       # @overload list_timeline(list, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -71,6 +73,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::List] The list.
       # @overload remove_list_member(list, user_to_remove, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -91,6 +94,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Cursor]
       # @overload memberships(options = {})
       #   @param options [Hash] A customizable set of options.
@@ -112,6 +116,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Cursor] The subscribers of the specified list.
       # @overload list_subscribers(list, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -131,6 +136,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::List] The specified list.
       # @overload list_subscribe(list, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -150,6 +156,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Boolean] true if user is a subscriber of the specified list, otherwise false.
       # @overload list_subscriber?(list, user_to_check, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -172,6 +179,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::List] The specified list.
       # @overload list_unsubscribe(list, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -193,6 +201,7 @@ module Twitter
       # @raise [Twitter::Error::Forbidden] Error raised when user has already been added.
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::List] The list.
       # @overload add_list_members(list, users, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -214,6 +223,7 @@ module Twitter
       # @rate_limited Yes
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Boolean] true if user is a member of the specified list, otherwise false.
       # @overload list_member?(list, user_to_check, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -235,6 +245,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Cursor]
       # @overload list_members(list, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -255,6 +266,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::List] The list.
       # @overload add_list_member(list, user_to_add, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -277,6 +289,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::List] The deleted list.
       # @overload destroy_list(list, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -296,6 +309,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::List] The created list.
       # @overload list_update(list, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -319,6 +333,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::List] The created list.
       # @param name [String] The name for the list.
       # @param options [Hash] A customizable set of options.
@@ -336,6 +351,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::List] The specified list.
       # @overload list(list, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -354,6 +370,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Cursor]
       # @overload subscriptions(options = {})
       #   @param options [Hash] A customizable set of options.
@@ -371,6 +388,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::NotFound] Error raised when supplied list is not found.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::List] The list.
       # @overload remove_list_members(list, users, options = {})
       #   @param list [Integer, String, Twitter::List] A Twitter list ID, slug, URI, or object.
@@ -391,6 +409,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::List>]
       # @overload owned_lists(options = {})
       #   @param options [Hash] A customizable set of options.

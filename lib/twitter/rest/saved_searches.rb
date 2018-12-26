@@ -12,6 +12,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::SavedSearch>] The saved searches.
       # @overload saved_search(options = {})
       #   Returns the authenticated user's saved search queries
@@ -46,6 +47,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::SavedSearch] The saved searches.
       # @param id [Integer] The ID of the saved search.
       # @param options [Hash] A customizable set of options.
@@ -59,6 +61,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::SavedSearch] The created saved search.
       # @param query [String] The query of the search the user would like to save.
       # @param options [Hash] A customizable set of options.
@@ -73,6 +76,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::SavedSearch>] The deleted saved searches.
       # @overload destroy_saved_search(*ids)
       #   @param ids [Enumerable<Integer>] A collection of saved search IDs.

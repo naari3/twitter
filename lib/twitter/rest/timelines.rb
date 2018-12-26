@@ -16,6 +16,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>]
       # @param options [Hash] A customizable set of options.
       # @option options [Integer] :since_id Returns results with an ID greater than (that is, more recent than) the specified ID.
@@ -34,6 +35,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>]
       # @overload user_timeline(user, options = {})
       #   @param user [Integer, String, Twitter::User] A Twitter user ID, screen name, URI, or object.
@@ -56,6 +58,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>]
       # @param user [Integer, String, Twitter::User] A Twitter user ID, screen name, URI, or object.
       # @param options [Hash] A customizable set of options.
@@ -79,6 +82,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>]
       # @param options [Hash] A customizable set of options.
       # @option options [Integer] :since_id Returns results with an ID greater than (that is, more recent than) the specified ID.
@@ -100,6 +104,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>]
       # @param options [Hash] A customizable set of options.
       # @option options [Integer] :since_id Returns results with an ID greater than (that is, more recent than) the specified ID.
@@ -120,6 +125,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>]
       # @param options [Hash] A customizable set of options.
       # @option options [Integer] :since_id Returns results with an ID greater than (that is, more recent than) the specified ID.
@@ -140,6 +146,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>]
       # @param options [Hash] A customizable set of options.
       # @option options [Integer] :count Specifies the number of records to retrieve. Must be less than or equal to 200.

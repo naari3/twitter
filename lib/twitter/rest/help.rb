@@ -14,6 +14,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Configuration] Twitter's configuration.
       def configuration(options = {})
         perform_get_with_object('/1.1/help/configuration.json', options, Twitter::Configuration)
@@ -25,6 +26,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Language>]
       def languages(options = {})
         perform_get_with_objects('/1.1/help/languages.json', options, Twitter::Language)
@@ -36,6 +38,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [String]
       def privacy(options = {})
         perform_get('/1.1/help/privacy.json', options)[:privacy]
@@ -47,6 +50,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [String]
       def tos(options = {})
         perform_get('/1.1/help/tos.json', options)[:tos]

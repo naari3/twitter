@@ -16,6 +16,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Cursor]
       # @overload friend_ids(options = {})
       #   Returns an array of numeric IDs for every user the authenticated user is following
@@ -34,6 +35,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Cursor]
       # @overload follower_ids(options = {})
       #   Returns an array of numeric IDs for every user following the authenticated user
@@ -54,6 +56,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>] The requested users.
       # @overload friendships(*users)
       #   @param users [Enumerable<Integer, String, Twitter::User>] A collection of Twitter user IDs, screen names, or objects.
@@ -72,6 +75,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Cursor]
       # @param options [Hash] A customizable set of options.
       def friendships_incoming(options = {})
@@ -84,6 +88,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Cursor]
       # @param options [Hash] A customizable set of options.
       def friendships_outgoing(options = {})
@@ -96,6 +101,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>] The followed users.
       # @overload follow(*users)
       #   @param users [Enumerable<Integer, String, Twitter::User>] A collection of Twitter user IDs, screen names, or objects.
@@ -121,6 +127,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>] The followed users.
       # @overload follow!(*users)
       #   @param users [Enumerable<Integer, String, Twitter::User>] A collection of Twitter user IDs, screen names, or objects.
@@ -142,6 +149,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>] The unfollowed users.
       # @overload unfollow(*users)
       #   @param users [Enumerable<Integer, String, Twitter::User>] A collection of Twitter user IDs, screen names, or objects.
@@ -159,6 +167,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Relationship]
       # @param user [Integer, String, Twitter::User] A Twitter user ID, screen name, URI, or object.
       # @param options [Hash] A customizable set of options.
@@ -175,6 +184,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Relationship]
       # @param source [Integer, String, Twitter::User] The Twitter user ID, screen name, or object of the source user.
       # @param target [Integer, String, Twitter::User] The Twitter user ID, screen name, or object of the target user.
@@ -196,6 +206,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Boolean] true if user_a follows user_b, otherwise false.
       # @param source [Integer, String, Twitter::User] The Twitter user ID, screen name, or object of the source user.
       # @param target [Integer, String, Twitter::User] The Twitter user ID, screen name, or object of the target user.
@@ -210,6 +221,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Cursor]
       # @overload followers(options = {})
       #   Returns a cursored collection of user objects for users following the authenticated user.
@@ -234,6 +246,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Cursor]
       # @overload friends(options = {})
       #   Returns a cursored collection of user objects for every user the authenticated user is following (otherwise known as their "friends").
@@ -258,6 +271,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Integer>]
       # @param options [Hash] A customizable set of options.
       def no_retweet_ids(options = {})

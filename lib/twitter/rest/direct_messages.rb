@@ -19,6 +19,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::DirectMessageEvent>] Direct message events sent by and received by the authenticating user.
       # @param options [Hash] A customizable set of options.
       # @option options [Integer] :count Specifies the number of records to retrieve. Must be less than or equal to 50. Default is 20
@@ -34,6 +35,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::DirectMessage>] Direct messages sent by and received by the authenticating user.
       # @param options [Hash] A customizable set of options.
       # @option options [Integer] :count Specifies the number of records to retrieve. Must be less than or equal to 50. Default is 20
@@ -48,6 +50,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::DirectMessage>] Direct messages received by the authenticating user.
       # @param options [Hash] A customizable set of options.
       # @option options [Integer] :count Specifies the number of records (sent and received dms) to retrieve. Must be less than or equal to 50. Default is 50
@@ -64,6 +67,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::DirectMessage>] Direct messages sent by the authenticating user.
       # @param options [Hash] A customizable set of options.
       # @option options [Integer] :count Specifies the number of records (sent and received dms) to retrieve. Must be less than or equal to 50. Default is 50
@@ -81,6 +85,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::DirectMessage] The requested message.
       # @param id [Integer] A direct message ID.
       # @param options [Hash] A customizable set of options.
@@ -96,6 +101,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::DirectMessageEvent] The requested message.
       # @param id [Integer] A direct message ID.
       # @param options [Hash] A customizable set of options.
@@ -110,6 +116,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::DirectMessage>] The requested messages.
       # @overload direct_messages(options = {})
       #   Returns the 20 most recent direct messages sent to the authenticating user
@@ -148,6 +155,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [nil] Response body from Twitter is nil if successful
       # @overload destroy_direct_message(*ids)
       #   @param ids [Enumerable<Integer>] A collection of direct message IDs.
@@ -161,6 +169,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::DirectMessage] The sent message.
       # @param user [Integer, String, Twitter::User] A Twitter user ID
       # @param text [String] The text of your direct message, up to 10,000 characters.
@@ -180,6 +189,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::DirectMessageEvent] The created direct message event.
       # @param user [Integer, String, Twitter::User] A Twitter user ID, screen name, URI, or object.
       # @param text [String] The text of your direct message, up to 10,000 characters.
@@ -202,6 +212,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::DirectMessageEvent] The created direct message event.
       # @param user [Integer, String, Twitter::User] A Twitter user ID, screen name, URI, or object.
       # @param text [String] The text of your direct message, up to 10,000 characters.

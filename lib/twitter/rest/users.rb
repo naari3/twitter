@@ -22,6 +22,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Settings]
       # @param options [Hash] A customizable set of options.
       # @option options [Integer] :trend_location_woeid The Yahoo! Where On Earth ID to use as the user's default trend location. Global information is available by using 1 as the WOEID. The woeid must be one of the locations returned by {https://dev.twitter.com/rest/reference/get/trends/available GET trends/available}.
@@ -46,6 +47,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::User] The authenticated user.
       # @param options [Hash] A customizable set of options.
       # @option options [Boolean, String, Integer] :skip_status Do not include user's Tweets when set to true, 't' or 1.
@@ -59,6 +61,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::User] The authenticated user.
       # @param device [String] Must be one of: 'sms', 'none'.
       # @param options [Hash] A customizable set of options.
@@ -73,6 +76,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::User] The authenticated user.
       # @param options [Hash] A customizable set of options.
       # @option options [String] :name Full name associated with the profile. Maximum of 20 characters.
@@ -90,6 +94,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::User] The authenticated user.
       # @param image [File] The background image for the profile, base64-encoded. Must be a valid GIF, JPG, or PNG image of less than 800 kilobytes in size. Images with width larger than 2048 pixels will be forcibly scaled down. The image must be provided as raw multipart data, not a URL.
       # @param options [Hash] A customizable set of options.
@@ -106,6 +111,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::User] The authenticated user.
       # @param image [File] The avatar image for the profile, base64-encoded. Must be a valid GIF, JPG, or PNG image of less than 700 kilobytes in size. Images with width larger than 500 pixels will be scaled down. Animated GIFs will be converted to a static GIF of the first frame, removing the animation.
       # @param options [Hash] A customizable set of options.
@@ -119,6 +125,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>] User objects that the authenticating user is blocking.
       # @param options [Hash] A customizable set of options.
       # @option options [Boolean, String, Integer] :skip_status Do not include user's Tweets when set to true, 't' or 1.
@@ -132,6 +139,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Cursor] Numeric user IDs the authenticating user is blocking.
       # @overload blocked_ids(options = {})
       #   @param options [Hash] A customizable set of options.
@@ -147,6 +155,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Boolean] true if the authenticating user is blocking the target user, otherwise false.
       # @param user [Integer, String, URI, Twitter::User] A Twitter user ID, screen name, URI, or object.
       # @param options [Hash] A customizable set of options.
@@ -167,6 +176,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>] The blocked users.
       # @overload block(*users)
       #   @param users [Enumerable<Integer, String, Twitter::User>] A collection of Twitter user IDs, screen names, or objects.
@@ -183,6 +193,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>] The un-blocked users.
       # @overload unblock(*users)
       #   @param users [Enumerable<Integer, String, Twitter::User>] A collection of Twitter user IDs, screen names, or objects.
@@ -199,6 +210,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Required
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>] The requested users.
       # @overload users(*users)
       #   @param users [Enumerable<Integer, String, Twitter::User>] A collection of Twitter user IDs, screen names, or objects.
@@ -216,6 +228,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::User] The requested user.
       # @overload user(options = {})
       #   Returns extended information for the authenticated user
@@ -243,6 +256,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Boolean] true if the user exists, otherwise false.
       # @param user [Integer, String, Twitter::User] A Twitter user ID, screen name, URI, or object.
       def user?(user, options = {})
@@ -260,6 +274,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>]
       # @param query [String] The search query to run against people search.
       # @param options [Hash] A customizable set of options.
@@ -276,6 +291,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>]
       # @overload contributees(options = {})
       #   @param options [Hash] A customizable set of options.
@@ -294,6 +310,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>]
       # @overload contributors(options = {})
       #   @param options [Hash] A customizable set of options.
@@ -312,6 +329,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [nil]
       # @param options [Hash] A customizable set of options.
       def remove_profile_banner(options = {})
@@ -328,6 +346,7 @@ module Twitter
       # @authentication Requires user context
       # @raise [Twitter::Error::BadRequest] Error raised when either an image was not provided or the image data could not be processed.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @raise [Twitter::Error::UnprocessableEntity] Error raised when the image could not be resized or is too large.
       # @return [nil]
       # @param banner [File] The Base64-encoded or raw image data being uploaded as the user's new profile banner.
@@ -348,6 +367,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::ProfileBanner]
       # @overload profile_banner(options = {})
       # @overload profile_banner(user, options = {})
@@ -364,6 +384,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>] The muted users.
       # @overload mute(*users)
       #   @param users [Enumerable<Integer, String, Twitter::User>] A collection of Twitter user IDs, screen names, or objects.
@@ -380,6 +401,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>] The un-muted users.
       # @overload unmute(*users)
       #   @param users [Enumerable<Integer, String, Twitter::User>] A collection of Twitter user IDs, screen names, or objects.
@@ -396,6 +418,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::User>] User objects that the authenticating user is muting.
       # @param options [Hash] A customizable set of options.
       # @option options [Boolean, String, Integer] :skip_status Do not include user's Tweets when set to true, 't' or 1.
@@ -409,6 +432,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Cursor] Numeric user IDs the authenticating user is muting
       # @overload muted_ids(options = {})
       #   @param options [Hash] A customizable set of options.

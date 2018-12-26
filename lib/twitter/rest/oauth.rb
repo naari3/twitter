@@ -16,6 +16,7 @@ module Twitter
       # @rate_limited No
       # @authentication Required
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [String] The Bearer token.
       # @param options [Hash] A customizable set of options.
       # @example Generate a Bearer Token
@@ -38,6 +39,7 @@ module Twitter
       # @rate_limited No
       # @authentication Required
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @param access_token [String] The bearer token to revoke.
       # @param options [Hash] A customizable set of options.
       # @return [String] The invalidated token. token_type should be nil.
@@ -53,6 +55,7 @@ module Twitter
       # @rate_limited No
       # @authentication Required
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [String] The token string.
       def reverse_token
         options = {x_auth_mode: 'reverse_auth'}

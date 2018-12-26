@@ -21,6 +21,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>]
       # @param tweet [Integer, String, URI, Twitter::Tweet] A Tweet ID, URI, or object.
       # @param options [Hash] A customizable set of options.
@@ -36,6 +37,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array]
       # @param tweet [Integer, String, URI, Twitter::Tweet] A Tweet ID, URI, or object.
       # @param options [Hash] A customizable set of options.
@@ -55,6 +57,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @raise [Twitter::Error::Forbidden] Error raised when supplied status is over 280 characters.
       # @return [Twitter::Tweet] The requested Tweet.
       # @param tweet [Integer, String, URI, Twitter::Tweet] A Tweet ID, URI, or object.
@@ -90,6 +93,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>] The deleted Tweets.
       # @overload destroy_status(*tweets)
       #   @param tweets [Enumerable<Integer, String, URI, Twitter::Tweet>] A collection of Tweet IDs, URIs, or objects.
@@ -112,6 +116,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Tweet] The created Tweet. When the tweet is deemed a duplicate by Twitter, returns the last Tweet from the user's timeline.
       # @param status [String] The text of your status update, up to 280 characters.
       # @param options [Hash] A customizable set of options.
@@ -137,6 +142,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @raise [Twitter::Error::DuplicateStatus] Error raised when a duplicate status is posted.
       # @return [Twitter::Tweet] The created Tweet.
       # @param status [String] The text of your status update, up to 280 characters.
@@ -163,6 +169,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>] The original tweets with retweet details embedded.
       # @overload retweet(*tweets)
       #   @param tweets [Enumerable<Integer, String, URI, Twitter::Tweet>] A collection of Tweet IDs, URIs, or objects.
@@ -189,6 +196,7 @@ module Twitter
       # @raise [Twitter::Error::AlreadyRetweeted] Error raised when tweet has already been retweeted.
       # @raise [Twitter::Error::NotFound] Error raised when tweet does not exist or has been deleted.
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>] The original tweets with retweet details embedded.
       # @overload retweet!(*tweets)
       #   @param tweets [Enumerable<Integer, String, URI, Twitter::Tweet>] A collection of Tweet IDs, URIs, or objects.
@@ -210,6 +218,7 @@ module Twitter
       # @rate_limited No
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Tweet] The created Tweet.
       # @param status [String] The text of your status update, up to 280 characters.
       # @param media [File, Array<File>] An image file or array of image files (PNG, JPEG or GIF).
@@ -237,6 +246,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::OEmbed] OEmbed for the requested Tweet.
       # @param tweet [Integer, String, URI, Twitter::Tweet] A Tweet ID, URI, or object.
       # @param options [Hash] A customizable set of options.
@@ -261,6 +271,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::OEmbed>] OEmbeds for the requested Tweets.
       # @overload oembed(*tweets)
       #   @param tweets [Enumerable<Integer, String, URI, Twitter::Tweet>] A collection of Tweet IDs, URIs, or objects.
@@ -287,6 +298,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Required
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Twitter::Cursor]
       # @overload retweeters_ids(options)
       #   @param options [Hash] A customizable set of options.
@@ -305,6 +317,7 @@ module Twitter
       # @rate_limited Yes
       # @authentication Requires user context
       # @raise [Twitter::Error::Unauthorized] Error raised when supplied user credentials are not valid.
+      # @raise [Twitter::Error::AccountHasLocked] Error raised when supplied account are locked.
       # @return [Array<Twitter::Tweet>] The original tweets with retweet details embedded.
       # @overload unretweet(*tweets)
       #   @param tweets [Enumerable<Integer, String, URI, Twitter::Tweet>] A collection of Tweet IDs, URIs, or objects.
