@@ -48,4 +48,13 @@ describe Twitter::Error do
       end
     end
   end
+
+  context 'when Account has locked' do
+    before do
+      stub_get('/1.1/statuses/user_timeline.json').with(query: {screen_name: 'sferik'}).to_return(status: 403, body: fixture('account_has_locked.json'), headers: {content_type: 'application/json; charset=utf-8'})
+    end
+    it 'raises AccountHasLocked' do
+      expect { @client.user_timeline('sferik') }.to raise_error(Twitter::Error::AccountHasLocked)
+    end
+  end
 end

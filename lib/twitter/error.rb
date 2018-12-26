@@ -32,6 +32,9 @@ module Twitter
     # Raised when a Tweet has already been posted
     DuplicateStatus = Class.new(Forbidden)
 
+    # Raised when an Account has temporarily locked
+    AccountHasLocked = Class.new(Forbidden)
+
     # Raised when Twitter returns the HTTP status code 404
     NotFound = Class.new(ClientError)
 
@@ -87,6 +90,8 @@ module Twitter
         # - "You have already retweeted this tweet." (?-Nov 2017)
         # - "sharing is not permissible for this status (Share validations failed)" (-? 2017)
         Twitter::Error::AlreadyRetweeted
+      when /temporarily locked/i
+        Twitter::Error::AccountHasLocked
       end
     end
 
